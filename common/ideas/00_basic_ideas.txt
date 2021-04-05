@@ -31,7 +31,7 @@ innovativeness_ideas = {
 	}
 	print_culture = {
 		global_institution_spread = 0.25
-		global_institution_growth = 0.10
+		embracement_cost = -0.15
 	}
 	optimism = {
 		war_exhaustion = -0.05
@@ -72,6 +72,7 @@ religious_ideas = {
 	}
 	church_attendance_duty = {
 		stability_cost_modifier = -0.25
+		global_tax_modifier = 0.1
 	}
 	divine_supremacy = {
 		global_missionary_strength = 0.03
@@ -85,7 +86,6 @@ religious_ideas = {
 	}
 	religious_tradition = {
 		prestige = 1
-		global_tax_modifier = 0.1
 	}
 	inquisition = {
 		missionary_maintenance_cost = -0.5
@@ -254,7 +254,7 @@ administrative_ideas = {
 		core_creation = -0.25
 	}
 	improved travel = {
-		local_friendly_movement_speed = -0.2
+		local_friendly_movement_speed = 0.2
 		envoy_travel_time = -0.2
 	}
 	bookkeeping = {
@@ -262,9 +262,10 @@ administrative_ideas = {
 	}
 	organised_companies = {
 		land_forcelimit_modifier = 0.10
+		hostile_attrition = 1
 	}
 	centralized_governance = {
-		state_governing_cost = 0.1
+		state_governing_cost = -0.1
 	}
 	civil_servants = {
 		adm_tech_cost_modifier = -0.1
@@ -284,7 +285,7 @@ humanist_ideas = {
 	category = ADM
 
 	bonus = {
-		development_cost = -0.15
+		development_cost = -0.10
 		yearly_harmony = 0.25  # Used if religion uses harmony (confucianism)
 		brahmins_muslim_loyalty_modifier = 0.1
 		dhimmi_loyalty_modifier = 0.1
@@ -375,49 +376,6 @@ spy_ideas = {
 }
 
 
-diplomatic_ideas = {
-	category = DIP
-	bonus = {
-		reduced_stab_impacts = yes
-	}
-
-	foreign_embassies = {
-		diplomats = 1
-	}
-	cabinet = {
-		diplomatic_upkeep = 1
-	}
-	grand_banquets = {
-		diplomats = 1
-	}
-	benign_diplomats = {
-		improve_relation_modifier = 0.25
-	}
-	experienced_diplomats  = {
-		diplomatic_reputation = 2
-	}
-	flexible_negotiation = {
-		province_warscore_cost = -0.2
-	}
-	diplomatic_corps = {
-		dip_tech_cost_modifier = -0.1
-	}
-
-	ai_will_do = {
-		factor = 0.67
-
-		modifier = {
-			factor = 2
-			is_emperor = yes
-		}
-		modifier = {
-			factor = 1.5
-			vassal = 2
-		}
-	}
-}
-
-
 trade_ideas = {
 	category = DIP
 
@@ -468,6 +426,7 @@ exploration_ideas = {
 
 	bonus = {
 		cb_on_primitives = yes
+		colonists = 1
 	}
 
 	quest_for_the_new_world	= {
@@ -485,14 +444,15 @@ exploration_ideas = {
 		global_colonial_growth = 10
 	}
 	vice_roys  = {
-		global_tariffs = 0.10
+		global_tax_modifier = 0.1
  		envoy_travel_time = -0.20
  	}
 	free_colonies = {
-		expel_minorities_cost = -1.0
+		global_colonial_growth = 10
+		global_ship_cost = -0.15
 	}
 	global_empire = {
-		naval_forcelimit_modifier = 0.25
+		naval_forcelimit_modifier = 0.33
 	}
 
 	ai_will_do = {
@@ -713,6 +673,79 @@ maritime_ideas = {
 }
 
 
+naval_ideas = {
+	category = DIP
+
+	trigger = {
+		primitives = no
+	}
+
+	bonus = {
+		ship_durability = 0.1
+		allowed_marine_fraction = 0.05
+	}
+
+	boarding_parties = {
+		leader_naval_shock = 1
+	}
+	improved_rams = {
+		galley_power = 0.25
+	}
+	naval_cadets = {
+		leader_naval_fire = 1
+		sunk_ship_morale_hit_recieved = -0.33
+	}
+	naval_glory = {
+		navy_tradition = 1
+	}
+	press_gangs = {
+		sailors_recovery_speed = 0.25
+	}
+	oak_forests_for_ships = {
+		heavy_ship_power = 0.20
+	}
+	superior_seamanship = {
+		naval_morale = 0.1
+		global_naval_engagement_modifier = 0.1
+	}
+
+	ai_will_do = {
+		factor = 0.31
+		modifier = {
+			factor = 0
+			is_tribal = yes
+		}
+		modifier = {
+			factor = 0
+			primitives = yes
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_ports = 1 }
+			NOT = { is_colonial_nation = yes }
+		}
+		modifier = {
+			factor = 0.31
+			NOT = { num_of_ports = 10 }
+		}
+		modifier = {
+			factor = 0.31
+			num_of_cities = 50
+		}
+
+		modifier = {
+			factor = 10
+			OR = {
+				has_reform = pirate_republic_reform
+				has_reform = pirate_kingdom
+				has_reform = war_against_the_world_government
+				has_reform = black_market_consortium_government
+			}
+		}
+	}
+}
+
+
 influence_ideas = {
 	category = DIP
 
@@ -899,7 +932,7 @@ defensive_ideas = {
 	category = MIL
 
 	bonus = {
-		hostile_attrition = 1
+		hostile_attrition = 3
 	}
 
 	battlefield_commisions = {
@@ -996,78 +1029,5 @@ quantity_ideas = {
 
 	ai_will_do = {
 		factor = 1.0
-	}
-}
-
-
-naval_ideas = {
-	category = MIL
-
-	trigger = {
-		primitives = no
-	}
-
-	bonus = {
-		ship_durability = 0.1
-		allowed_marine_fraction = 0.05
-	}
-
-	boarding_parties = {
-		leader_naval_shock = 1
-	}
-	improved_rams = {
-		galley_power = 0.25
-	}
-	naval_cadets = {
-		leader_naval_fire = 1
-		sunk_ship_morale_hit_recieved = -0.33
-	}
-	naval_glory = {
-		navy_tradition = 1
-	}
-	press_gangs = {
-		sailors_recovery_speed = 0.25
-	}
-	oak_forests_for_ships = {
-		heavy_ship_power = 0.20
-	}
-	superior_seamanship = {
-		naval_morale = 0.1
-		global_naval_engagement_modifier = 0.1
-	}
-
-	ai_will_do = {
-		factor = 0.31
-		modifier = {
-			factor = 0
-			is_tribal = yes
-		}
-		modifier = {
-			factor = 0
-			primitives = yes
-		}
-		modifier = {
-			factor = 0
-			NOT = { num_of_ports = 1 }
-			NOT = { is_colonial_nation = yes }
-		}
-		modifier = {
-			factor = 0.31
-			NOT = { num_of_ports = 10 }
-		}
-		modifier = {
-			factor = 0.31
-			num_of_cities = 50
-		}
-
-		modifier = {
-			factor = 10
-			OR = {
-				has_reform = pirate_republic_reform
-				has_reform = pirate_kingdom
-				has_reform = war_against_the_world_government
-				has_reform = black_market_consortium_government
-			}
-		}
 	}
 }

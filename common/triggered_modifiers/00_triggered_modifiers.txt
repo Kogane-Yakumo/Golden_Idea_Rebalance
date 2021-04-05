@@ -7,11 +7,11 @@
 # Stolen Intelligence.
 ###########################################
 potential = {
-		has_idea = intelligence_records
+		has_idea = remote_surveillance
 	}
 
 	trigger = {
-		has_idea = intelligence_records
+		has_idea = remote_surveillance
 		calc_true_if = {
 			all_country = {
 				has_spy_network_from = {

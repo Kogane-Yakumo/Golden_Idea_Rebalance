@@ -3,6 +3,30 @@
 #
 # Effects are fully scriptable here.
 
+###########################################
+# Stolen Intelligence.
+###########################################
+potential = {
+		has_idea = intelligence_records
+	}
+
+	trigger = {
+		has_idea = intelligence_records
+		calc_true_if = {
+			all_country = {
+				has_spy_network_from = {
+					who = ROOT
+					value = 75
+				}
+			}
+			amount = 3
+		}
+	}
+
+	country_military_power = 1
+	country_admin_power = 1
+	country_diplomatic_power = 1
+}
 
 ###########################################
 # Discovery of the East Indian trade route.

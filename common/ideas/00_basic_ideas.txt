@@ -600,7 +600,7 @@ exploration_ideas = {
 }
 
 
-maritime_ideas = {
+navigation_ideas = {
 	category = DIP
 
 	trigger = {
@@ -613,27 +613,28 @@ maritime_ideas = {
 
 	merchant_traditions = {
 		naval_tradition_from_trade = 1.0
+		merchants = 1
 	}
 	merchant_marine = {
-		global_sailors_modifier = 0.5
-	}
-	sheltered_ports = {
-		global_ship_repair = 0.1
-		sailor_maintenance_modifer = -0.1
-	}
-	grand_navy = {
-		naval_forcelimit_modifier = 0.5
+		global_ship_trade_power = 0.2
 	}
 	ships_penny = {
 		global_ship_cost = -0.1
+		naval_maintenance_modifier = -0.1
 	}
-	sea_hawks = {
-		free_leader_pool = 1
-		admiral_cost = -0.25
+	promise_of_wealth = {
+		naval_attrition = -0.25
+		global_sailors = 1250
 	}
-	naval_fighting_instruction = {
-		blockade_efficiency = 0.5
-		privateer_efficiency = 0.25
+	trading_posts = {
+		trade_steering = 0.1
+		trade_company_investment_cost = -0.2
+	}
+	distant_markets = {
+		global_foreign_trade_power = 0.15
+	}
+	effeciant_sea_routes = {
+		leader_naval_manuever = 1
 	}
 
 	ai_will_do = {
@@ -685,28 +686,31 @@ naval_ideas = {
 		allowed_marine_fraction = 0.05
 	}
 
-	boarding_parties = {
-		leader_naval_shock = 1
+	grand_navy = {
+		naval_forcelimit_modifier = 0.25
 	}
-	improved_rams = {
-		galley_power = 0.25
+	naval_drill = {
+		sailors_recovery_speed = 0.15
+		global_sailors_modifier = 0.1
 	}
 	naval_cadets = {
 		leader_naval_fire = 1
 		sunk_ship_morale_hit_recieved = -0.33
 	}
-	naval_glory = {
-		navy_tradition = 1
+	gunboat_dipomacy = {
+		navy_tradition = 1.5
+		power_projection_from_insults = 0.20
 	}
-	press_gangs = {
-		sailors_recovery_speed = 0.25
+	sea_hawks = {
+		free_leader_pool = 1
+		admiral_cost = -0.25
 	}
-	oak_forests_for_ships = {
-		heavy_ship_power = 0.20
+	naval_fighting_instruction = {
+		siege_blockade_progress = 1
 	}
 	superior_seamanship = {
 		naval_morale = 0.1
-		global_naval_engagement_modifier = 0.1
+		heavy_ships_power = 0.20
 	}
 
 	ai_will_do = {
@@ -750,7 +754,7 @@ influence_ideas = {
 	category = DIP
 
 	bonus = {
-		unjustified_demands = -0.5
+		reduced_stab_impacts = yes
 	}
 
 	tribute_system = {
@@ -758,20 +762,22 @@ influence_ideas = {
 	}
 
 	additional_loyalist_recruitment = {
-		reduced_liberty_desire = 15
+		reduced_liberty_desire = 20
 	}
 
 	integrated_elites = {
 		diplomatic_annexation_cost = -0.25
 	}
 	buffer_states = {
-		diplomatic_upkeep = 1
+		diplomatic_upkeep = 2
 	}
 	diplomatic_influence = {
 		diplomatic_reputation = 2
+		accept_vassalization_reasons = 10
 	}
-	postal_service = {
-		envoy_travel_time = -0.25
+	bolster_tensions = {
+		can_fabricate_for_vassals = yes
+		rebel_support_efficiency = 0.66
 	}
 	marcher_lords = {
 		vassal_forcelimit_bonus = 1
@@ -949,7 +955,7 @@ defensive_ideas = {
 	}
 	defensive_mentality = {
 		defensiveness = 0.2
-		fort_maintenance_modifier = -0.1
+		fort_maintenance_modifier = -0.25
 	}
 	supply_trains = {
 		reinforce_speed = 0.33

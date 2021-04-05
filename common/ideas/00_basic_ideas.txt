@@ -254,7 +254,7 @@ administrative_ideas = {
 		core_creation = -0.25
 	}
 	improved travel = {
-		local_friendly_movement_speed = 0.2
+		movement_speed = -0.15
 		envoy_travel_time = -0.2
 	}
 	bookkeeping = {
@@ -262,10 +262,11 @@ administrative_ideas = {
 	}
 	organised_companies = {
 		land_forcelimit_modifier = 0.10
-		hostile_attrition = 1
+		yearly_army_professionalism = 0.06
 	}
 	centralized_governance = {
 		state_governing_cost = -0.1
+		hostile_attrition = 1
 	}
 	civil_servants = {
 		adm_tech_cost_modifier = -0.1
@@ -611,29 +612,32 @@ navigation_ideas = {
 	}
 
 	merchant_traditions = {
-		naval_tradition_from_trade = 1.0
+		ship_durability = 0.15
 		merchants = 1
 	}
 	merchant_marine = {
-		global_ship_trade_power = 0.2
+		global_ship_trade_power = 0.25
+		trade_efficiency = 0.1
 	}
 	ships_penny = {
 		global_ship_cost = -0.1
 		naval_maintenance_modifier = -0.1
+	}
+	naval_swarm = {
+		galley_power = 0.25
+		sunk_ship_morale_hit_recieved = -0.8
 	}
 	promise_of_wealth = {
 		naval_attrition = -0.25
 		global_sailors = 1250
 	}
 	trading_posts = {
-		trade_steering = 0.1
-		trade_company_investment_cost = -0.2
+		trade_steering = 0.15
+		trade_company_investment_cost = -0.33
 	}
 	distant_markets = {
-		global_foreign_trade_power = 0.15
-	}
-	effeciant_sea_routes = {
 		leader_naval_manuever = 1
+		global_foreign_trade_power = 0.25
 	}
 
 	ai_will_do = {
@@ -819,7 +823,7 @@ aristocracy_ideas = {
 	}
 
 	noble_knights = {
-		cavalry_power = 0.10
+		cavalry_power = 0.15
 		leader_land_shock = 1
 	}
 	military_traditions = {
@@ -834,11 +838,12 @@ aristocracy_ideas = {
 		global_manpower_modifier = 0.33
 	}
 	noble_officers = {
-		free_leader_pool = 2
+		cavalry_cost = -0.4
 		general_cost = -0.66
 	}
 	international_nobility = {
 		fire_damage_received = -0.15
+		free_leader_pool = 2
 	}
 	noble_resilience = {
 		mercenary_manpower = 0.20
@@ -871,13 +876,13 @@ plutocracy_ideas = {
 
 	tradition_of_payment = {
 		mercenary_manpower = 0.10
-		mercenary_discipline = 0.025
+		mercenary_discipline = 0.05
 	}
 	abolished_serfdom = {
 		land_morale = 0.10
 	}
 	local_militia = {
-		global_unrest = -1
+		general_cost = -0.25
 		global_regiment_recruit_speed = -0.33
 	}
 	conscription = {
@@ -885,11 +890,11 @@ plutocracy_ideas = {
 		movement_speed = 0.15
 	}
 	guerrilla_tactics = {
-		movement_speed = 0.15
+		land_attrition = -0.10
 		shock_damage = 0.10
 	}
 	active_reserves = {
-		reserves_organisation = 0.40
+		reserves_organisation = 0.15
 	}
 	emancipation = {
 		manpower_recovery_speed = 0.33
@@ -925,6 +930,7 @@ offensive_ideas = {
 	}
 	grand_army = {
 		land_forcelimit_modifier = 0.2
+		yearly_army_professionalism = 0.02
 	}
 	napoleonic_warfare = {
 		discipline = 0.05
@@ -948,12 +954,14 @@ defensive_ideas = {
 	}
 	military_drill = {
 		land_morale = 0.15
+		yearly_army_professionalism = 0.03
 	}
 	improved_manuever = {
 		leader_land_manuever = 1
 	}
 	regimental_system = {
 		land_maintenance_modifier = -0.05
+		garrison_size = 0.20
 	}
 	defensive_mentality = {
 		defensiveness = 0.2
@@ -1011,10 +1019,10 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.50
+		land_forcelimit_modifier  = 0.35
 	}
 	mass_army = {
-		global_manpower_modifier = 0.50
+		global_manpower_modifier = 0.4
 	}
 	the_young_can_serve = {
 		manpower_recovery_speed = 0.20

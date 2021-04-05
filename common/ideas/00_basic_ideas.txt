@@ -883,7 +883,7 @@ plutocracy_ideas = {
 	}
 	local_militia = {
 		general_cost = -0.25
-		global_regiment_recruit_speed = -0.33
+		global_regiment_recruit_speed = -0.55
 	}
 	conscription = {
 		global_manpower 0.2
@@ -917,7 +917,7 @@ offensive_ideas = {
 		leader_land_shock = 1
 	}
 	national_conscripts = {
-		global_regiment_recruit_speed = -0.1
+		global_regiment_recruit_speed = -0.33
 	}
 	superior_firepower = {
 		leader_land_fire = 1
@@ -1019,7 +1019,7 @@ quantity_ideas = {
 	category = MIL
 
 	bonus = {
-		land_forcelimit_modifier  = 0.35
+		land_forcelimit_modifier  = 0.33
 	}
 	mass_army = {
 		global_manpower_modifier = 0.4

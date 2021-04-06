@@ -254,7 +254,7 @@ administrative_ideas = {
 		core_creation = -0.25
 	}
 	improved travel = {
-		movement_speed = -0.15
+		movement_speed = 0.15
 		envoy_travel_time = -0.2
 	}
 	bookkeeping = {
